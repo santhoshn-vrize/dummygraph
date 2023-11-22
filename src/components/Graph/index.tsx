@@ -1,5 +1,5 @@
-"use client";
-import React, { useEffect } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import {
   DoughnutController,
@@ -9,6 +9,7 @@ import {
 import { Registry, ChartComponentLike } from "chart.js/auto";
 import * as Chart from "chart.js/auto";
 import "./styles.css";
+
 type DoughnutChartData = Chart.ChartData<"doughnut", number[], unknown>;
 
 interface ExtendedRegistry extends Registry {
@@ -41,6 +42,12 @@ const CustomizableCard: React.FC<CustomizableCardProps> = ({
 
   const customOptions: {
     cutout: string;
+    plugins?: {
+      legend: { display: boolean };
+    };
+    elements?: { arc: { borderWidth: number } };
+    onHover?: { enabled: boolean };
+    hover?: { mode?: string | null | undefined } | false;
     tooltips?: { enabled: boolean };
   } & Chart.ChartOptions = {
     plugins: {
@@ -54,11 +61,9 @@ const CustomizableCard: React.FC<CustomizableCardProps> = ({
         borderWidth: 0,
       },
     },
+    hover: false,
     tooltips: {
       enabled: false,
-    },
-    hover: {
-      mode: "nearest",
     },
   };
 
@@ -84,9 +89,6 @@ const CustomizableCard: React.FC<CustomizableCardProps> = ({
       }}
     >
       <div className="card-content">
-        <p>
-          <span className="card-title">{title}</span>
-        </p>
         <div className="chart-container">
           <Doughnut
             data={chartData}
@@ -95,52 +97,76 @@ const CustomizableCard: React.FC<CustomizableCardProps> = ({
           />
         </div>
         <p className="active-label">{activePrLabel}</p>
-
         <p className="sum-Label">{sumLabel}</p>
       </div>
+      <span className="card-title">{title}</span>
       <div className="label-container">
-        {dataValues.map((value, index) => (
-          <div
-            key={index}
-            style={{
-              display: "flex",
-              color: "aliceblue",
-              alignItems: "center",
-
-              marginBottom: "2px",
-              fontFamily: "Poppins",
-            }}
-          >
+        <div>
+          {dataValues.slice(0, 3).map((value, index) => (
             <div
-              className="custom-badge-container"
-              style={{ backgroundColor: backgroundColors[index] }}
+              key={index}
+              style={{
+                display: "flex",
+                color: "aliceblue",
+                alignItems: "center",
+                marginBottom: "2px",
+                fontFamily: "Poppins",
+              }}
             >
-              <div className="custom-badge-text">{value?.toString()}</div>
+              <div
+                className="custom-badge-container"
+                style={{ backgroundColor: backgroundColors[index] }}
+              >
+                <div className="custom-badge-text">{value?.toString()}</div>
+              </div>
+              <div className="label-name">
+                {(chartData.labels?.[index] as React.ReactNode) || ""}
+              </div>
             </div>
-            <div className="label-name">
-              {(chartData.labels?.[index] as React.ReactNode) || ""}
+          ))}
+        </div>
+
+        <div className="labels-group">
+          {dataValues.slice(3).map((value, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                color: "aliceblue",
+                alignItems: "center",
+                marginBottom: "2px",
+                fontFamily: "Poppins",
+              }}
+            >
+              <div
+                className="custom-badge-container"
+                style={{
+                  backgroundColor: backgroundColors[index + 3],
+                }}
+              >
+                <div className="custom-badge-text">{value?.toString()}</div>
+              </div>
+              <div className="label-name">
+                {(chartData.labels?.[index + 3] as React.ReactNode) || ""}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
-    //   </div>
-    // </div>
   );
 };
 
 interface CardContainerProps {
   children: React.ReactNode;
+  tooltip?: boolean;
 }
 
-const CardContainer: React.FC<CardContainerProps> = ({ children }) => (
+const CardContainer: React.FC<CardContainerProps> = ({ children, tooltip }) => (
   <div
     style={{
-      display: "flex",
-
-      flexDirection: "row",
-      justifyContent: "space-between", // You can adjust this based on your layout preferences
-      width: "100%", // Adjust the width as needed
+      width: "33%",
+      pointerEvents: tooltip ? "auto" : "none",
     }}
   >
     {children}
@@ -154,6 +180,7 @@ interface AppProps {
   title: string;
   sumLabel: number;
   graphbgurl: string;
+  // width: string | null;
 }
 
 const CustomGraph: React.FC<AppProps & { graphbgurl: string }> = ({
@@ -163,6 +190,7 @@ const CustomGraph: React.FC<AppProps & { graphbgurl: string }> = ({
   title,
   sumLabel,
   graphbgurl,
+  //width,
 }) => {
   const backgroundColors = [
     "rgba(149, 189, 255, 1)",
@@ -204,23 +232,7 @@ const CustomGraph: React.FC<AppProps & { graphbgurl: string }> = ({
   };
 
   return (
-    <CardContainer>
-      <CustomizableCard
-        title={title}
-        chartData={data1 as Chart.ChartData<"doughnut", number[], unknown>}
-        activePrLabel={activePrLabel}
-        sumLabel={sumLabel}
-        backgroundColors={backgroundColors}
-        graphbgurl={graphbgurl}
-      />
-      <CustomizableCard
-        title={title}
-        chartData={data1 as Chart.ChartData<"doughnut", number[], unknown>}
-        activePrLabel={activePrLabel}
-        sumLabel={sumLabel}
-        backgroundColors={backgroundColors}
-        graphbgurl={graphbgurl}
-      />
+    <CardContainer tooltip={false}>
       <CustomizableCard
         title={title}
         chartData={data1 as Chart.ChartData<"doughnut", number[], unknown>}

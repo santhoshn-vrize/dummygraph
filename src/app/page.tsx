@@ -23,23 +23,40 @@ export default function Home() {
 
   return (
     <div>
-      <Chart
-        labels={labels}
-        dataValues={dataValues}
-        activePrLabel={activePrLabel}
-        title={title}
-        sumLabel={sumLabel}
-        graphbgurl={graphbgurl}
-      />
-      {/* <CustomGraph
-        labels={labels}
-        dataValues={dataValues}
-        activePrLabel={activePrLabel}
-        title={title}
-        sumLabel={sumLabel}
-        graphbgurl={graphbgurl}
-      /> */}
-      {/* <Link href="/en/quote-requests">Quote Requests</Link> */}
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+        <Chart
+          labels={labels}
+          dataValues={dataValues}
+          activePrLabel={activePrLabel}
+          title={title}
+          sumLabel={sumLabel}
+          graphbgurl={graphbgurl}
+        />
+        <Chart
+          labels={labels}
+          dataValues={dataValues}
+          activePrLabel={activePrLabel}
+          title={title}
+          sumLabel={sumLabel}
+          graphbgurl={graphbgurl}
+        />
+        <Chart
+          labels={labels}
+          dataValues={dataValues}
+          activePrLabel={activePrLabel}
+          title={title}
+          sumLabel={sumLabel}
+          graphbgurl={graphbgurl}
+        />
+        <Chart
+          labels={labels}
+          dataValues={dataValues}
+          activePrLabel={activePrLabel}
+          title={title}
+          sumLabel={sumLabel}
+          graphbgurl={graphbgurl}
+        />
+      </div>
     </div>
   );
 }

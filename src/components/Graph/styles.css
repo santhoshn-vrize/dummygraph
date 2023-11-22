@@ -1,16 +1,14 @@
 
 .customizable-card {
 
-  width: 33.33%;
-
-  height: 139.46px;
+  
   top: 0;
   left: 0;
   border-radius: 9.75px;
   box-shadow: 0 3.9008703231811523px 19.504350662231445px 0px #00000040;
-  margin: 0 10px;
+  
   display: flex;
-  flex-direction: row;
+ 
   align-items: center;
   position: relative;
   margin-top: 0;
@@ -29,22 +27,22 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%; 
-  
-
+   padding-right: 10px,
+}
 
 
 .card-content {
-  justify-content: center;
-  align-items: center;
+  
   height: 90px;
   margin-top: -5px;
+  
 }
 
 .card-title {
   position: absolute;
-  width: 130px;
-  top: 15.94px;
-  left: 215px;
+ 
+  top: 8.94px;
+  left: 200px;
   transform: translateX(-50%);
   font-family: Poppins;
   font-size: 12px;
@@ -53,25 +51,25 @@
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF;
-  margin-bottom: 10px;
+
 }
 
 
 .chart-container {
   height: 130.45%;
-  width: 105%;
+  width: 100%;
 }
 
 .doughnut-chart {
 
-   margin-top: -19%;
+   margin-top: -8%;
    margin-left: 10px
 }
 
 
 .active-label {
   position: relative;
-  font-weight: 00;
+ 
   color: white;
   font-family: Poppins;
     text-align: center;
@@ -79,36 +77,35 @@
   left: 1%;
   line-height: 27px;
  font-family: Poppins;
-  top: -105px;
+  top: -101px;
   font-size: 12px;
 }
 
 
 .sum-Label{
      position: relative;
-  font-weight: 200;
-  width: 90%;
-  height: 27px;
+  font-weight: 600;
+
   color: white;
   font-family: Poppins;
   top: -96px;
   font-size: 19px;
   transform: translateY(-50%);
-  left: 7%;
+  left: 2%;
   text-align: center;
-  line-height: 27px;
+ 
 }
 
 
 
 
 .label-container{
-  padding-left: 20px;
-  width: 80%;
+ 
+  padding-left: 17px;
+ 
   margin-top: 0;
   padding-top: 40px;
-  padding-bottom: 0;
-  height: auto;
+
   font-family: Poppins;
   display: flex;
   flex-direction: column;
@@ -123,17 +120,17 @@
 
 
 .custom-badge-container {
-  width: 15%;
+ 
   height: 18px;
   padding: 1.95px 8.8px;
   border-radius: 12.19px;
-  gap: 9.75px;
+
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   margin-bottom: 5px;
   font-family: Poppins;
-  
+  justify-content: center;
 }
 
 .custom-badge-text {
@@ -147,291 +144,173 @@
   justify-content: center;
   font-family: Poppins;
   color: #333;
-  width: 90%;
-  height: 20px;
+ 
 }
 
 .label-name{
   margin-left: 5px;
   font-size: 10px;
   font-family: Poppins;
-  font-weight: 65;
+ 
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF;
+   justify-content: center;
   margin-top: -5px;   
 }
 
 
 
-@media only screen and (max-width: 1024px) {
 
-    .customizable-card {
+@media screen and (max-width: 1440px) {
 
-  width: 33.3%;
+  
+}
 
-  height: 100.46px;
+@media screen and (max-width: 1240px) {
+ 
+}
+
+
+@media screen and (max-width: 1024px) {
+
+.customizable-card {
+
+  
   top: 0;
   left: 0;
   border-radius: 9.75px;
   box-shadow: 0 3.9008703231811523px 19.504350662231445px 0px #00000040;
-  margin: 0 10px;
+  
+  display: flex;
+ 
+  align-items: center;
+  position: relative;
+  margin-top: 0;
+  background-size: cover;
+  background-attachment: scroll, local;
+  background-position: center;
+  overflow: hidden;
+}
+
+
+
+
+
+.card-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  position: relative;
-  margin-top: 0;
-  background-size: cover;
-  background-attachment: scroll, local;
-  background-position: center;
-  overflow: hidden;
+  justify-content: space-between;
+  width: 100%; 
+   padding-right: 10px,
 }
 
 
-  .chart-container {
-    height: 43%;
-    width: auto;
-    margin-left: -5px;
-    margin-top: -10px;
-  }
-
- 
-
-  .doughnut-chart {
-    width: 100% !important;
-    height: auto !important;
-    margin-top: 0;
-  }
-
-
-  .active-label {
-    position: relative;
-    font-weight: 5; 
-    color: white;
-    font-family: Poppins;
-    text-align: center;
-    height: 20px;
-    left: 10%;
-    line-height: 27px;
-    font-size: 10px;
-    top: -30px; 
-  }
-
-  .sum-Label {
-    position: relative;
-    font-weight: 200;
-    width: 90%;
-    height: 27px;
-    color: white;
-    font-family: Poppins;
-    top: -32px; 
-    font-size: 15px;
-    transform: translateY(-50%);
-    left: 15%;
-    text-align: center;
-    line-height: 27px;
-  }
-
-
-
-  .card-title {
-  position: absolute;
-  width: 100%;
-  top: 5.94px;
-  left: 80%;
-  transform: translateX(-50%);
-  font-family: Poppins;
-  font-size: 9px;
-  font-weight: 600;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-}
-
-
-.label-container{
-  padding-left: 20px;
-  width: 60%;
-  margin-top: -5px;
-  padding-top: 40px;
-  padding-bottom: 0;
-  height: auto;
-  font-family: Poppins;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
- max-height: 80px;
-  gap: 0px 10px;
-}
-.custom-badge-container {
-  width: 12%;
-  height: 12px;
-  padding: 1.95px 8.8px;
-  border-radius: 12.19px;
-  gap: 9.75px;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  margin-bottom: 5px;
-  font-family: Poppins;
- 
-}
-
-.custom-badge-text {
-  font-size: 8.5px;
-  font-weight: 600;
-  line-height: 10px;
-  letter-spacing: 0em;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Poppins;
-  color: #333;
- width: 90%;
-  height: 20px;
-}
-
-.label-name{
-  margin-left: 5px;
-  font-size: 6.8px;
-  font-family: Poppins;
-  font-weight: 65;
-  line-height: 15px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #FFFFFF;
-  margin-top: -5px;   
-}
-
-}
-
-
-
-@media only screen and (max-width: 768px) {
-    .customizable-card {
-
-  width: 33.3%;
-
-  height: 99.46px;
-  top: 0;
-  left: 0;
-  border-radius: 9.75px;
-  box-shadow: 0 3.9008703231811523px 19.504350662231445px 0px #00000040;
-  margin: 0 10px;
-  display: flex;
-  flex-direction: col;
-  align-items: center;
-  position: relative;
-  margin-top: 0;
-  background-size: cover;
-  background-attachment: scroll, local;
-  background-position: center;
-  overflow: hidden;
-}
-
-  .chart-container {
-    height: 40%;
-    width: auto;
-    margin-left: -5px;
-    margin-top: -7px;
-   
-  }
-
-   .card-content {
-  justify-content: center;
-  align-items: center;
+.card-content {
+  
   height: 90px;
   margin-top: -5px;
-      width: 36%;
+  
 }
-  .doughnut-chart {
-    width: 75% !important;
-    height: auto !important;
-    margin-top: 8px;
-  }
 
-
-  .active-label {
-    position: relative;
-    font-weight: 5;
-    color: white;
-    font-family: Poppins;
-    text-align: center;
-    height: 20px;
-    left: -2%;
-    line-height: 27px;
-    font-size: 8px;
-    top: -35px;
-  }
-
-  .sum-Label {
-    position: relative;
-    font-weight: 200;
-    width: 90%;
-    height: 27px;
-    color: white;
-    font-family: Poppins;
-    top: -35px; 
-    font-size: 12px;
-    transform: translateY(-50%);
-    left: 2%;
-    text-align: center;
-    line-height: 27px;
-  }
-
-
-  .card-title {
+.card-title {
   position: absolute;
-  width: 110px;
+ 
   top: 8.94px;
-  left: 140px;
+  left: 200px;
   transform: translateX(-50%);
   font-family: Poppins;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF;
-  margin-bottom: 10px;
+
 }
 
+
+.chart-container {
+  height: 130.45%;
+  width: 100%;
+}
+
+.doughnut-chart {
+
+   margin-top: -8%;
+   margin-left: 10px
+}
+
+
+.active-label {
+  position: relative;
+ 
+  color: white;
+  font-family: Poppins;
+    text-align: center;
+  height: 20px;
+  left: 1%;
+  line-height: 27px;
+ font-family: Poppins;
+  top: -101px;
+  font-size: 12px;
+}
+
+
+.sum-Label{
+     position: relative;
+  font-weight: 600;
+
+  color: white;
+  font-family: Poppins;
+  top: -96px;
+  font-size: 19px;
+  transform: translateY(-50%);
+  left: 2%;
+  text-align: center;
+ 
+}
+
+
+
+
 .label-container{
-  padding-left: 2px;
-  width: 50%;
-  margin-top: -5px;
-  padding-top: 30px;
-  padding-bottom: 5px;
-  height: auto;
+ 
+  padding-left: 17px;
+ 
+  margin-top: 0;
+  padding-top: 40px;
+
   font-family: Poppins;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
- max-height: 80px;
-  gap: 0px 5px;
+  max-height: 110px;
+  gap: 0 10px;
 }
 
 
+
+
+
+
 .custom-badge-container {
-  width: 10%;
-  height: 10px;
+ 
+  height: 18px;
   padding: 1.95px 8.8px;
   border-radius: 12.19px;
-  gap: 9.75px;
+
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   margin-bottom: 5px;
   font-family: Poppins;
- 
+  justify-content: center;
 }
 
 .custom-badge-text {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 10px;
   letter-spacing: 0em;
@@ -441,23 +320,19 @@
   justify-content: center;
   font-family: Poppins;
   color: #333;
- width: 90%;
-  height: 20px;
+ 
 }
-
 
 .label-name{
   margin-left: 5px;
-  font-size: 3px;
+  font-size: 10px;
   font-family: Poppins;
-  font-weight: 65;
+ 
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
   color: #FFFFFF;
+   justify-content: center;
   margin-top: -5px;   
 }
-}
-
-
 }
